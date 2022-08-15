@@ -1,8 +1,34 @@
-.about_main {
+.about__main {
 
+    /* align-items: center; */
+    transform: translatex(20%);
+    max-width: 700px;
+    padding: 3rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
 
-    padding: 10rem 10rem;
+}
+
+.about__main-text {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10rem;
+    min-width: -webkit-fill-available;
+}
+
+.about__main-body {
+    align-items: left;
+}
+
+.about__main-tech_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about__main-image {
+    width: 300px;
+    height: 300px;
+    padding-left: 5rem;
 }

@@ -2,25 +2,26 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited.
 // All rights reserved. No warranty, explicit or implicit, provided.
 // Proprietary and confidential.
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import type { FC } from 'react';
-import { Button, Dialog, Typography, TextField } from '@material-ui/core';
+import { useInView } from 'react-intersection-observer'
 import { Navbar, ShoppingCart, Counter, Header, About } from './components'
 import './App.css'
 
-const App: FC = () => {
-  const [data, setData] = useState<string>()
+const App: React.FC = () => {
+  const [data, setData] = useState<string>();
   const [open, setOpen] = React.useState<boolean>(false);
+
   const fetchData = async () => {
     const response = await fetch("http://localhost:8000/hello")
     const jsonRes = await response.json()
     setData(String(jsonRes))
-
   }
 
-  const handleClose = () => {
-    setOpen(false)
-  }
+  const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
+
+
+
   return (
 
 
@@ -28,18 +29,10 @@ const App: FC = () => {
       <div className="gradient__bg">
         <Navbar />
         <Header />
-        <About />
+        <div ref={aboutRef}>
+          {aboutInView ? <div className="about"><About /> </div> : <span></span>}
+        </div>
 
-        <Counter>
-          {(count, setCount) =>
-            <div>
-              {count}
-              <button onClick={() => setCount(count + 1)}>+</button>
-              <button onClick={() => setCount(count - 1)}>-</button>
-
-            </div>}
-        </Counter>
-        <ShoppingCart />
       </div>
     </div >
 

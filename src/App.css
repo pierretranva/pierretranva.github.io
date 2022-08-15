@@ -1,11 +1,3 @@
-.App .gradient__bg {
-    background: rgb(201, 223, 244);
-    background: -moz-radial-gradient(circle, rgba(201, 223, 244, 1) 0%, rgba(188, 227, 242, 1) 21%, rgba(194, 203, 231, 1) 73%, rgba(198, 183, 223, 1) 100%);
-    background: -webkit-radial-gradient(circle, rgba(201, 223, 244, 1) 0%, rgba(188, 227, 242, 1) 21%, rgba(194, 203, 231, 1) 73%, rgba(198, 183, 223, 1) 100%);
-    background: radial-gradient(circle, rgba(201, 223, 244, 1) 0%, rgba(188, 227, 242, 1) 21%, rgba(194, 203, 231, 1) 73%, rgba(198, 183, 223, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c9dff4", endColorstr="#c6b7df", GradientType=1);
-}
-
 .gradient__text {
     background: var(--gradient-text);
     background-clip: text;
@@ -13,10 +5,25 @@
     -webkit-text-fill-color: transparent;
 }
 
-.section__padding {
-    padding: 4rem 6rem;
+
+.about {
+    animation: fadeIn 2s;
 }
 
-.section__margin {
-    margin: 4rem 6rem;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    0% {
+        transform: translateY(150px);
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }

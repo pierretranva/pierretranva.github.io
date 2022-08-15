@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
+html {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    background: rgb(201, 223, 244);
+    background: -moz-radial-gradient(circle, rgba(201, 223, 244, 1) 0%, rgba(188, 227, 242, 1) 21%, rgba(194, 203, 231, 1) 73%, rgba(198, 183, 223, 1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(201, 223, 244, 1) 0%, rgba(188, 227, 242, 1) 21%, rgba(194, 203, 231, 1) 73%, rgba(198, 183, 223, 1) 100%);
+    background: radial-gradient(circle, rgba(201, 223, 244, 1) 0%, rgba(188, 227, 242, 1) 21%, rgba(194, 203, 231, 1) 73%, rgba(198, 183, 223, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c9dff4", endColorstr="#c6b7df", GradientType=1);
+}
+
+
 
 :root {
     --font-family: 'Manrope', sans-serif;

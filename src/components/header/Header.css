@@ -2,7 +2,7 @@
 
     display: flex;
     align-items: center;
-    height: 690px;
+    height: 800px;
     transform: translateX(-14%);
 }
 
@@ -28,7 +28,7 @@
 
 
 .header__main-globe {
-    transform: translate(0%, -5%)
+    transform: translate(0%, -5%);
 }
 
 .header__main-links {

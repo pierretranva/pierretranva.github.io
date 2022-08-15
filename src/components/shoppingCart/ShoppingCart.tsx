@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Dialog, Typography, TextField } from '@material-ui/core';
+import { Button, Dialog, Typography, TextField, Skeleton } from '@material-ui/core';
 
 interface Props {
     children: (
@@ -30,7 +30,7 @@ export const ShoppingCart: React.FC = () => {
 
         <div>
             <h1>Choose your veggie and add it to the cart</h1>
-
+            <Typography>{cart.name}{cart.count}{modifyCart}</Typography>
             <Button onClick={() => handleClickVeggie(0)}>Potato</Button>
             <Button onClick={() => handleClickVeggie(1)}>Onion</Button>
             <Button onClick={() => handleClickVeggie(2)}>Lettuce</Button>

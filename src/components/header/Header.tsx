@@ -77,8 +77,6 @@ const Header = () => {
                     atmosphereAltitude={.25}
 
 
-
-
                     arcsData={arcsData}
                     arcColor={() => 'rgba(255,105,180,0.8)'}
                     arcAltitudeAutoScale={.4}
@@ -86,7 +84,7 @@ const Header = () => {
                     arcDashLength={.9}
                     arcDashGap={4}
                     arcDashAnimateTime={() => 6000}
-                    arcsTransitionDuration={2000}
+                    arcsTransitionDuration={1000}
 
                 />
             </div>
