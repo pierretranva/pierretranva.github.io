@@ -15,7 +15,7 @@
 
 .header__main-name_sub {
 
-    color: #f900c7;
+    color: rgba(255,105,180,0.8);
 
 }
 
@@ -26,15 +26,11 @@
 }
 
 
-
-.header__main-globe {
-    transform: translate(0%, -5%);
-}
-
 .header__main-links {
     flex: 1;
     display: flex;
     justify-content: left;
+    text-decoration: none;
 
 }
 
@@ -52,6 +48,11 @@
     padding-right: 1rem;
 
 }
+.header__main-links_github:hover, .header__main-links_instagram:hover, .header__main-links_linkedin:hover{
+    color: rgba(255,105,180,0.8);
+
+}
+
 
 .header__main-links Link {
 

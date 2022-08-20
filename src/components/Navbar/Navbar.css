@@ -63,3 +63,6 @@
     position: relative;
 
 }
+.resume_button:hover {
+    color: rgba(255,105,180,0.8);
+}

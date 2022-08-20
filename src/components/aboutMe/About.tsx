@@ -32,8 +32,8 @@ const About = () => {
                 </div>
 
                 <div className="about__main-body">
-                    <Typography align="left" variant="body2">Hello! My name is Pierre and I am an aspiring Software Engineer. I am currently studying computer science at Virginia Tech. My past experience in software engineeer comes from my love of eating food. </Typography>
-                    <Typography align="left" variant="body2">Software Engieer </Typography>
+                    <Typography align="left" variant="body2" paragraph={true}>Hello! My name is Pierre and I am an aspiring Software Engineer. I am currently studying computer science at Virginia Tech. I love to learn new things and I'm open to explore anything related to computer science.</Typography>
+                    <Typography align="left" variant="body2" paragraph={true}>My current experiences in computer science come from my past classes, personal projects, and a summer internship at Obscurity Labs. </Typography>
                 </div>
                 <div className="about__main-tech">
                     <Typography align="center" variant="body2">Heres a few programming languages I've worked with in the past: </Typography>
