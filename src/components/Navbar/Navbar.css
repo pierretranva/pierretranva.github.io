@@ -34,26 +34,24 @@
     align-items: center;
 }
 
-.navbar__main-links_container p,
-.navbar__main-sign p,
-.navbar__main-menu_container p {
-    color: #fff;
-    font-family: var(--font-family);
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 25px;
-    text-transform: capitalize;
+.navbar__main-links_container a{
+    /* font-family: var(--font-family); */
+    /* font-weight: 500; */
+    /* font-size: 18px; */
+    /* line-height: 25px; */
+    
+    text-decoration: none;
 
     margin: 0 1rem;
     cursor: pointer;
 }
 
 
-.navbar__main-sign button,
-.navbar__main-menu_container button {
+.navbar__main-sign button {
     padding: 0.5rem .75rem;
     font-family: var(--font-family);
     font-weight: 500;
+    
 }
 
 .navbar__main-menu {

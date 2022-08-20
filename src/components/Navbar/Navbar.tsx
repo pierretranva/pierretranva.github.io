@@ -12,10 +12,10 @@ const Navbar = () => {
                     <img src={icon_128} alt="Pie Logo"/>
                 </div>
                 <div className="navbar__main-links_container">
-                    <a href="#home"><Typography variant= "h1" paragraph ={true}>Home</Typography></a>
-                    <a href="#home"><Typography variant= "h1" paragraph ={true}>About Me</Typography></a>
-                    <a href="#home"><Typography variant= "h1" paragraph ={true}>Projects</Typography></a>
-                    <a href="#home"><Typography variant= "h1" paragraph ={true}>Timeline</Typography></a>
+                    <a href="#home"><Typography variant= "h6" paragraph ={true}>Home</Typography></a>
+                    <a href="#home"><Typography variant= "h6" paragraph ={true}>About Me</Typography></a>
+                    <a href="#home"><Typography variant= "h6" paragraph ={true}>Projects</Typography></a>
+                    <a href="#home"><Typography variant= "h6" paragraph ={true}>Timeline</Typography></a>
                 </div>
             </div>
             <div className="navbar__main-sign">
