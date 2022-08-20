@@ -1,5 +1,8 @@
 export { default as Navbar } from './Navbar/Navbar'
 export { default as Header } from './header/Header'
 export { default as About } from './aboutMe/About'
-export { ShoppingCart as ShoppingCart } from './shoppingCart/ShoppingCart'
-export { Counter as Counter } from './counter/Counter'
+export { default as Projects } from './projects/Projects'
+export { default as Timelist } from './timelist/Timelist'
+
+export {ShoppingCart } from './shoppingCart/ShoppingCart'
+export { Counter } from './counter/Counter'

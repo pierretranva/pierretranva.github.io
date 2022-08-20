@@ -1,19 +1,7 @@
 import React, { useState } from "react";
-import { Button, Dialog, Typography, TextField, Skeleton } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 
-interface Props {
-    children: (
-        cart: typeof item,
-        modifyCart: React.Dispatch<React.SetStateAction<{
-            name: string;
-            count: number;
-        }>>,
-    ) => JSX.Element | null
-}
-var item = {
-    name: "",
-    count: 0
-};
+
 
 
 export const ShoppingCart: React.FC = () => {

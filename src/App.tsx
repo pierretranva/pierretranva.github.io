@@ -5,7 +5,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import type { FC } from 'react';
 import { useInView } from 'react-intersection-observer'
-import { Navbar, ShoppingCart, Counter, Header, About } from './components'
+import { Navbar, Header, About, Timelist, Projects } from './components'
 import './App.css'
 
 const App: React.FC = () => {
@@ -32,6 +32,8 @@ const App: React.FC = () => {
         <div ref={aboutRef}>
           {aboutInView ? <div className="about"><About /> </div> : <span></span>}
         </div>
+        <Projects/>
+        <Timelist/>
 
       </div>
     </div >
