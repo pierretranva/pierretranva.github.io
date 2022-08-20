@@ -9,7 +9,15 @@
 .about {
     animation: fadeIn 2s;
 }
-
+.projects {
+    animation: fadeIn 2s;
+}
+.tempAbout {
+    height: 500px;
+}
+.tempProjects {
+    height: 570px;
+}
 @keyframes fadeIn {
     0% {
         opacity: 0;

@@ -19,6 +19,7 @@ const App: React.FC = () => {
   }
 
   const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
+  const { ref: projectsRef, inView: projectsInView } = useInView({ triggerOnce: true });
 
 
 
@@ -30,9 +31,13 @@ const App: React.FC = () => {
         <Navbar />
         <Header />
         <div ref={aboutRef}>
-          {aboutInView ? <div className="about"><About /> </div> : <span></span>}
+          {aboutInView ? <div className="about"><About /> </div> : <div className='tempAbout'></div>}
         </div>
-        <Projects/>
+        <div >
+          {projectsInView ? <div className="projects"><Projects/></div> : <div className = 'tempProjects'></div>}
+        </div>
+        <div ref={projectsRef} />
+      
         <Timelist/>
 
       </div>
