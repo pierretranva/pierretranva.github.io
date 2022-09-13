@@ -22,7 +22,7 @@ function generateListItem() {
 const About = () => {
 
     return (
-        <div className="about__main">
+        <div className="about__main" id="about">
 
             <div className="about__main-text">
                 <div className="about__main-title">
@@ -45,7 +45,7 @@ const About = () => {
                 </div>
             </div>
             <div className="about__main-image">
-                <img src={picture} className="image" />
+                <img src={picture} alt="Pierre Tran" className="image" />
             </div>
 
         </div >

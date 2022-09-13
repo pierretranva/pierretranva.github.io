@@ -4,8 +4,6 @@ import { LinkedIn, Instagram, GitHub } from '@material-ui/icons'
 import Globe from 'react-globe.gl'
 import './Header.css'
 import countries from './hexData.json'
-import blueGlobe from '../../assets/blueGlobe.jpeg'
-import darkGlobe from '../../assets/darkGlobe.jpeg'
 import * as THREE from 'three'
 
 
@@ -46,7 +44,7 @@ const arcsData = Array.from(Array(N).keys()).map((_, index) => ({
 const Header = () => {
 
     return (
-        <div className="header__main">
+        <div className="header__main" >
             <div className="header__main-name">
                 <Typography className="header__main-name_sub" align="left" variant="subtitle1">Hi, my name is </Typography>
                 <Typography align="left" noWrap={true} variant="h1">Pierre Tran.</Typography>

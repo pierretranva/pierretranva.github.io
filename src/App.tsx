@@ -2,21 +2,14 @@
 // Unauthorized copying of this file, via any medium is strictly prohibited.
 // All rights reserved. No warranty, explicit or implicit, provided.
 // Proprietary and confidential.
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import type { FC } from 'react';
 import { useInView } from 'react-intersection-observer'
 import { Navbar, Header, About, Timelist, Projects } from './components'
 import './App.css'
 
 const App: React.FC = () => {
-  const [data, setData] = useState<string>();
-  const [open, setOpen] = React.useState<boolean>(false);
-
-  const fetchData = async () => {
-    const response = await fetch("http://localhost:8000/hello")
-    const jsonRes = await response.json()
-    setData(String(jsonRes))
-  }
+ 
 
   const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
   const { ref: projectsRef, inView: projectsInView } = useInView({ triggerOnce: true });
@@ -31,10 +24,10 @@ const App: React.FC = () => {
         <Navbar />
         <Header />
         <div ref={aboutRef}>
-          {aboutInView ? <div className="about"><About /> </div> : <div className='tempAbout'></div>}
+          {aboutInView ? <div className="about"><About /> </div> : <div className='tempAbout' id='about'></div>}
         </div>
         <div >
-          {projectsInView ? <div className="projects"><Projects/></div> : <div className = 'tempProjects'></div>}
+          {projectsInView ? <div className="projects"><Projects/></div> : <div className = 'tempProjects' id="projects"></div>}
         </div>
         <div ref={projectsRef} />
       
