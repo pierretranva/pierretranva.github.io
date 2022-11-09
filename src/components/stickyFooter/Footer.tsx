@@ -1,6 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { LinkedIn, Instagram, GitHub } from "@material-ui/icons";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import ConstructionIcon from "@mui/icons-material/Construction";
@@ -45,10 +46,25 @@ export default function StickyFooter() {
 							theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
 					}}
 				>
-					<Container maxWidth="sm">
-						<Typography variant="body1">Thank You for looking at my website!</Typography>
-						<Copyright />
-					</Container>
+					<div className="footer-bottom">
+						<Container maxWidth="sm">
+							<div className="links">
+								<Link href="https://www.linkedin.com/in/pierretranva/" target="_blank" rel="noopener noreferrer">
+									<LinkedIn className="header__main-links_linkedin" />
+								</Link>
+								<Link href="https://www.instagram.com/p_tran1/" target="_blank" rel="noopener noreferrer">
+									<Instagram className="header__main-links_instagram" />
+								</Link>
+								<Link href="https://github.com/pierretranva" target="_blank" rel="noopener noreferrer">
+									<GitHub className="header__main-links_github" />
+								</Link>
+							</div>
+							<div className="footer-text">
+								<Typography variant="body1">Thanks for visiting my website!</Typography>
+								<Copyright />
+							</div>
+						</Container>
+					</div>
 				</Box>
 			</Box>
 		</div>

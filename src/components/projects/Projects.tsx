@@ -56,7 +56,7 @@ function generateCards() {
 			["Python ", "MongoDB ", "FastAPI ", "Docker "],
 		],
 		"Machine Learning Project": [
-			"Create a neural network and K-Nearest-Neighbor algorithm from strach to classify flower types. KNN model: 100% accuracy   Neural Netowrk: 80% accuracy",
+			"Create a neural network and K-Nearest-Neighbor algorithm from strach to classify flower types. KNN model: 100% accuracy   Neural Network: 80% accuracy",
 			"https://github.com/pierretranva/machineLearningProject",
 			["Java"],
 		],
