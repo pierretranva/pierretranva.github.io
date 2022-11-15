@@ -53,17 +53,17 @@ function generateCards() {
 		"Obscurity Labs": [
 			"Build a cybersecurity cli application, api, and databse to extract and store all Windows OS files' metadata",
 			"https://github.com/obscuritylabs",
-			["Python ", "MongoDB ", "FastAPI ", "Docker "],
+			["Python", "MongoDB", "FastAPI", "Docker"],
 		],
 		"Machine Learning Project": [
 			"Create a neural network and K-Nearest-Neighbor algorithm from strach to classify flower types. KNN model: 100% accuracy   Neural Network: 80% accuracy",
 			"https://github.com/pierretranva/machineLearningProject",
 			["Java"],
 		],
-		"Linked Web Data Structure": [
-			"Custom data structure where each node in the structure has pointer to the neighbors",
-			"google.com",
-			["Java"],
+		"CO2 Emissions Visualization": [
+			"VTHacks22 project. Developed a full-stack application to visualize over 2.5 million data points into an interactive map. Used K-Means Clustering to find CO2 hotspots by density and sum.",
+			"https://github.com/pierretranva/Hackathon",
+			["React", "Flask", "Sklearn", "Python"],
 		],
 		Pastimer: [
 			"Develop a desktop application to help with productivity. Based on the Pomodoro technique.",
