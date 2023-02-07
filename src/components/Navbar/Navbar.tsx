@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, Typography, Link } from '@material-ui/core';
-import icon_128 from "../../assets/icon_128.png"
+import pie_icon from "../../assets/pie.png"
 import './Navbar.css'
 
 
@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="navbar__main" id="home">
             <div className="navbar__main-links">
                 <div className="navbar__main-links_logo">
-                    <img src={icon_128} alt="Pie Logo"/>
+                    <img src={pie_icon} alt="Pie Logo" id="pie_icon"/>
                 </div>
                 <div className="navbar__main-links_container">
                     <a href="#home"><Typography variant= "h6" paragraph ={true} color= "#25449f">Home</Typography></a>

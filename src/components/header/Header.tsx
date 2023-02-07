@@ -32,7 +32,6 @@ const arcsData = Array.from(Array(N).keys()).map((_, index) => ({
 	startLng: (Math.random() - 0.5) * 360,
 	endLat: (Math.random() - 0.5) * 180,
 	endLng: (Math.random() - 0.5) * 360,
-	name: "hello!",
 }));
 
 const Header = () => {
@@ -78,11 +77,11 @@ const Header = () => {
 					arcAltitudeAutoScale={0.4}
 					arcStroke={0.6}
 					arcDashLength={0.9}
-					arcDashGap={4}
-					arcDashAnimateTime={6000}
+					arcDashGap={2}
+     				arcDashAnimateTime={() => Math.random() * 4000 + 500}
 					arcsTransitionDuration={1000}
 					width= {700}
-					// height= {600}
+
 				/>
 			</div>
 		</div>

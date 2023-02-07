@@ -17,7 +17,7 @@ function ItemCard(
 	return (
 		<div>
 			<Card
-				elevation={3}
+				elevation={1}
 				variant="outlined"
 				className="ItemCard__main"
 				sx={{ backgroundColor: "rgba(134, 168, 231, .4)" }}
@@ -39,10 +39,11 @@ function ItemCard(
 						<div className="ItemCard__main-content-text">
 							<Typography variant="body2">{CardText}</Typography>
 						</div>
-						<div className="wrapper">
+						
+					</CardContent>
+					<div className="techWrapper">
 							<div className="ItemCard__main-content-list">{generatePaperList(TechnologiesList)}</div>
 						</div>
-					</CardContent>
 				</div>
 			</Card>
 		</div>
@@ -51,12 +52,12 @@ function ItemCard(
 function generateCards() {
 	const info = {
 		"Obscurity Labs": [
-			"Build a cybersecurity cli application, api, and databse to extract and store all Windows OS files' metadata",
+			"Build a cybersecurity cli application, api, and database to extract and store all Windows OS files' metadata",
 			"https://github.com/obscuritylabs",
 			["Python", "MongoDB", "FastAPI", "Docker"],
 		],
 		"Machine Learning Project": [
-			"Create a neural network and K-Nearest-Neighbor algorithm from strach to classify flower types. KNN model: 100% accuracy   Neural Network: 80% accuracy",
+			"Create a neural network and K-Nearest-Neighbor algorithm from scratch to classify flower types. KNN model: 100% accuracy   Neural Network: 80% accuracy",
 			"https://github.com/pierretranva/machineLearningProject",
 			["Java"],
 		],
@@ -65,10 +66,10 @@ function generateCards() {
 			"https://github.com/pierretranva/Hackathon",
 			["React", "Flask", "Sklearn", "Python"],
 		],
-		Pastimer: [
-			"Develop a desktop application to help with productivity. Based on the Pomodoro technique.",
+		"FemTech": [
+			"HackViolet23 project. A creative twist on Windows 95 to support women in STEM.",
 			"https://github.com/thomasltran/pastimer",
-			["Python ", "MongoDB ", "FastAPI ", "Docker"],
+			["Vue", "Javascript", "Interact.js"],
 		],
 		"Portfolio Website": [
 			"You're here right now!",
@@ -76,7 +77,7 @@ function generateCards() {
 			["React ", "Typescript ", "MUI ", "Docker "],
 		],
 		"Undergraduate Research": [
-			"Data Freshness and Age of Information Optimization. Focused on utilizing non-linear functions to analyze and optimize data network packet transfer for accuracry of data collectiona and visualization.",
+			"Data Freshness and Age of Information Optimization. Focused on utilizing non-linear functions to analyze and optimize data network packet transfer for accuracy of data collection and visualization.",
 			"https://github.com/pierretranva/Fall22-AgeOfInformation",
 			["Python"],
 		],
@@ -99,8 +100,8 @@ function generatePapers(list: String[]) {
 }
 function generatePaper(word: String) {
 	return (
-		<Paper variant="elevation">
-			<Typography variant="body2">{word}</Typography>
+		<Paper variant="elevation" elevation={1} >
+			<Typography variant="body2" className="techlist">{word}</Typography>
 		</Paper>
 	);
 }

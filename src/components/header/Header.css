@@ -21,7 +21,7 @@ justify-self: right;
   height: 600px;
   /* transform: translateX(-14%); */
   justify-content: space-around;
-  margin-bottom:100px;
+  margin-bottom:200px;
 }
 .header__main-links {
   flex: 1;

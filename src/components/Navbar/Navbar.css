@@ -17,7 +17,7 @@
 	margin-right: 2rem;
 }
 
-.navbar_main-links_logo img {
+.navbar_main-links_logo{
 	width: 70px;
 	height: 20px;
 }
@@ -31,6 +31,7 @@
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
+	z-index: 100;
 }
 
 .navbar__main-links_container a {
@@ -59,4 +60,10 @@
 }
 .resume_button:hover {
 	color: rgba(255, 105, 180, 0.8);
+}
+
+#pie_icon{
+	height:81px;
+
+	padding-left: 3rem;
 }
