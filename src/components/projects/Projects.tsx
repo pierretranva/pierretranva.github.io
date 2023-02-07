@@ -53,7 +53,7 @@ function generateCards() {
 	const info = {
 		"Obscurity Labs": [
 			"Build a cybersecurity cli application, api, and database to extract and store all Windows OS files' metadata",
-			"https://github.com/obscuritylabs",
+			"https://github.com/obscuritylabs/darkmoon",
 			["Python", "MongoDB", "FastAPI", "Docker"],
 		],
 		"Machine Learning Project": [
@@ -67,8 +67,8 @@ function generateCards() {
 			["React", "Flask", "Sklearn", "Python"],
 		],
 		"FemTech": [
-			"HackViolet23 project. A creative twist on Windows 95 to support women in STEM.",
-			"https://github.com/thomasltran/pastimer",
+			"HackViolet23 project. A creative twist on Windows 95 to support women in STEM. Click the link above to try the website for yourself!",
+			"https://pierretranva.github.io/hackviolet23/",
 			["Vue", "Javascript", "Interact.js"],
 		],
 		"Portfolio Website": [
