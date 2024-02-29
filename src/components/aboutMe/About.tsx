@@ -20,6 +20,8 @@ function generateListItem() {
     "Typescript",
     "SQL",
     "Bash",
+    "C",
+    "Kubernetes"
   ];
   return technologies.map((value) => (
     <ListItem>
@@ -54,9 +56,11 @@ const About = () => {
             computer science.
           </Typography>
           <Typography align="left" variant="body2" paragraph={true}>
-            My current experiences in computer science come from classes,
-            personal projects, undergraduate reseach, and a summer internship at
-            Obscurity Labs.{" "}
+           I have experience with full-stack development, cloud computing, and some machine learning. 
+           I have have two software engineer internships at Obscurity Labs and Zeta Associates. In addition, I have worked
+           as a undergraduate research assistant doing theory and algorithms research using the primal-dual algorithm.
+           Currently I am an undergraduate teaching assistant for Intro to GUI where I hold weekly office hours to help
+           students with their projects and assignments.
           </Typography>
         </div>
         <div className="about__main-tech">

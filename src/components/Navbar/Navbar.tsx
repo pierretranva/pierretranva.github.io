@@ -16,11 +16,11 @@ const Navbar = () => {
                     <a href="#home"><Typography variant= "h6" paragraph ={true} color= "#25449f">Home</Typography></a>
                     <a href="#about"><Typography variant= "h6" paragraph ={true} color= "#25449f">About Me</Typography></a>
                     <a href="#projects"><Typography variant= "h6" paragraph ={true} color= "#25449f">Projects</Typography></a>
-                    <a href="#timeline"><Typography variant= "h6" paragraph ={true} color= "#25449f">Timeline</Typography></a>
+                    {/* <a href="#timeline"><Typography variant= "h6" paragraph ={true} color= "#25449f">Timeline</Typography></a> */}
                 </div>
             </div>
             <div className="navbar__main-sign">
-                <Link href="https://drive.google.com/file/d/1tXfNRxq5Rifl4JseDvPmY_qtCvHcvBs7/view?usp=sharing" target="_blank"><Button className="resume_button"variant="contained">Resume</Button></Link>
+                <Link href="https://drive.google.com/file/d/1oduWwU-yOD3LvJ_1kLxnGm6yi7rsy1Rq/view?usp=sharing" target="_blank"><Button className="resume_button"variant="contained">Resume</Button></Link>
             </div>
             <div className="navbar__main-menu">
             </div>

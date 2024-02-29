@@ -31,8 +31,8 @@
 }
 
 .ItemCard__main {
-	width: 260px;
-	height: 260px;
+	width: 18em;
+	height: 18rem;
 	border-radius: 10px;
 	margin-right: 0rem;
 	text-align: center;
