@@ -20,7 +20,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar__main-sign">
-                <Link href="https://drive.google.com/file/d/1oduWwU-yOD3LvJ_1kLxnGm6yi7rsy1Rq/view?usp=sharing" target="_blank"><Button className="resume_button"variant="contained">Resume</Button></Link>
+                <Link href="https://drive.google.com/file/d/1C84Dw9xCS-5nlgKg1hBrII58w1fOpmo5/view?usp=sharing" target="_blank"><Button className="resume_button"variant="contained">Resume</Button></Link>
             </div>
             <div className="navbar__main-menu">
             </div>
