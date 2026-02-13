@@ -1,50 +1,153 @@
-# Getting Started with Create React App
+# pierretranva.github.io
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio website for **Pierre Tran** — Software Engineer & ML Engineer.
 
-## Available Scripts
+**Live:** [pierretranva.github.io](https://pierretranva.github.io)
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 + TypeScript |
+| Build Tool | Vite |
+| Animations | GSAP + ScrollTrigger |
+| Smooth Scroll | Lenis |
+| Styling | Vanilla CSS (custom design system) |
+| Hosting | GitHub Pages (via `gh-pages`) |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+src/
+├── components/
+│   ├── Hero/          # Landing section with letter scatter animation
+│   ├── About/         # Bio + headshot
+│   ├── Experience/    # Work history timeline
+│   ├── Projects/      # Horizontal scroll project cards
+│   ├── Skills/        # Categorized skill tags
+│   ├── Contact/       # CTA with email, LinkedIn, GitHub links
+│   └── Navbar/        # Fixed top navigation
+├── data/
+│   └── data.ts        # All content (experience, projects, skills, socials)
+├── hooks/
+│   └── useSmoothScroll.ts
+├── App.tsx
+├── main.tsx
+└── index.css          # Design system (colors, typography, spacing)
+```
 
-### `npm run deploy`
+## Commands
 
-Will run the github actions pipeline to deploy the new site to github pages
+### Development
 
-### `npm test`
+```bash
+# Install dependencies
+npm install
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Start dev server (http://localhost:5173)
+npm run dev
+```
 
-### `npm run build`
+### Deploy to GitHub Pages
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+# Build + deploy in one command
+npm run deploy
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This runs `npm run build` (via the `predeploy` script), then pushes the `dist/` folder to the `gh-pages` branch.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Push Source Code
 
-### `npm run eject`
+```bash
+git add -A
+git commit -m "your message"
+git push origin master
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How to Update Content
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+All website content lives in a single file: **`src/data/data.ts`**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Update Experience
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Edit the `experiences` array. Each entry looks like:
 
-## Learn More
+```ts
+{
+    company: 'Company Name',
+    role: 'Your Title',
+    location: 'City, ST',
+    period: 'Month Year – Month Year',
+    current: true,  // optional, adds "Current" badge
+    bullets: [
+        'What you accomplished...',
+    ],
+},
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> **Tip:** Keep the most recent experience first (reverse chronological).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Update Projects
+
+Edit the `projects` array. Each entry:
+
+```ts
+{
+    title: 'Project Name',
+    description: 'One paragraph about what it does and why it matters.',
+    tech: ['React', 'Python', 'etc'],
+    github: 'https://github.com/pierretranva/repo-name',  // optional
+    link: 'https://live-demo.com',                          // optional
+},
+```
+
+> **Tip:** Most impressive projects should be listed first.
+
+### Update Skills
+
+Edit the `skills` array to add/remove categories or items:
+
+```ts
+{
+    category: 'Category Name',
+    items: ['Skill 1', 'Skill 2', 'Skill 3'],
+},
+```
+
+### Update Social Links
+
+Edit the `socials` object at the top of `data.ts`:
+
+```ts
+export const socials = {
+    email: 'your@email.com',
+    github: 'https://github.com/yourusername',
+    linkedin: 'https://linkedin.com/in/yourusername',
+};
+```
+
+### Update Headshot
+
+Replace `public/headshot.jpg` with your new image. Keep the filename the same, or update the `src` in `src/components/About/About.tsx`.
+
+> **Important:** Compress images before committing. Large images (>500KB) can cause `git push` failures.
+
+### After Making Changes
+
+```bash
+# 1. Preview locally
+npm run dev
+
+# 2. Deploy
+npm run deploy
+
+# 3. Commit source code
+git add -A
+git commit -m "Update content"
+git push origin master
+```
+
+## License
+
+MIT
