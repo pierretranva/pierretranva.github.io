@@ -1,32 +1,102 @@
-import * as React from 'react';
-import { Button, Typography, Link } from '@material-ui/core';
-import pie_icon from "../../assets/pie.png"
-import './Navbar.css'
+import { useEffect, useRef, useState } from 'react';
+import './Navbar.css';
 
+const NAV_ITEMS = [
+  { label: 'About', id: 'about' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Projects', id: 'projects' },
+  { label: 'Skills', id: 'skills' },
+  { label: 'Contact', id: 'contact' },
+];
 
-const Navbar = () => {
+export default function Navbar() {
+  const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const lastScrollY = useRef(0);
 
-    return (
-        <div className="navbar__main" id="home">
-            <div className="navbar__main-links">
-                <div className="navbar__main-links_logo">
-                    <img src={pie_icon} alt="Pie Logo" id="pie_icon"/>
-                </div>
-                <div className="navbar__main-links_container">
-                    <a href="#home"><Typography variant= "h6" paragraph ={true} color= "#25449f">Home</Typography></a>
-                    <a href="#about"><Typography variant= "h6" paragraph ={true} color= "#25449f">About Me</Typography></a>
-                    <a href="#projects"><Typography variant= "h6" paragraph ={true} color= "#25449f">Projects</Typography></a>
-                    {/* <a href="#timeline"><Typography variant= "h6" paragraph ={true} color= "#25449f">Timeline</Typography></a> */}
-                </div>
-            </div>
-            <div className="navbar__main-sign">
-                <Link href="https://drive.google.com/file/d/1C84Dw9xCS-5nlgKg1hBrII58w1fOpmo5/view?usp=sharing" target="_blank"><Button className="resume_button"variant="contained">Resume</Button></Link>
-            </div>
-            <div className="navbar__main-menu">
-            </div>
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setHidden(currentY > lastScrollY.current && currentY > 100);
+      setScrolled(currentY > 50);
+      lastScrollY.current = currentY;
 
+      // Scroll spy
+      for (const item of [...NAV_ITEMS].reverse()) {
+        const el = document.getElementById(item.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= window.innerHeight * 0.4) {
+            setActiveSection(item.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollTo = (id: string) => {
+    setMobileOpen(false);
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToTop = () => {
+    setMobileOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navClasses = [
+    'navbar',
+    hidden && !mobileOpen ? 'navbar--hidden' : '',
+    scrolled ? 'navbar--scrolled' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  return (
+    <>
+      <nav className={navClasses}>
+        <button className="navbar__logo" onClick={scrollToTop}>
+          PT
+        </button>
+        <div className="navbar__links">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.id}
+              className={`navbar__link ${activeSection === item.id ? 'navbar__link--active' : ''}`}
+              onClick={() => scrollTo(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
         </div>
-    )
+        <button
+          className={`navbar__hamburger ${mobileOpen ? 'navbar__hamburger--open' : ''}`}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </nav>
+      <div className={`navbar__mobile-overlay ${mobileOpen ? 'navbar__mobile-overlay--open' : ''}`}>
+        {NAV_ITEMS.map((item) => (
+          <button
+            key={item.id}
+            className="navbar__link"
+            onClick={() => scrollTo(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
+      </div>
+    </>
+  );
 }
-
-export default Navbar

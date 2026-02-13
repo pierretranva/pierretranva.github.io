@@ -1,71 +1,26 @@
-// Copyright (C) 2022 Obscurity Labs LLC. <admin@obscuritylabs.com> - All Rights Reserved
-// Unauthorized copying of this file, via any medium is strictly prohibited.
-// All rights reserved. No warranty, explicit or implicit, provided.
-// Proprietary and confidential.
-import React from "react";
-import { ThemeProvider, createTheme } from "@material-ui/core";
-import type { FC } from "react";
-import { useInView } from "react-intersection-observer";
-import { Navbar, Header, About, Footer, Projects } from "./components";
-import "./App.css";
+import { useSmoothScroll } from './hooks/useSmoothScroll';
+import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import About from './components/About/About';
+import Experience from './components/Experience/Experience';
+import Projects from './components/Projects/Projects';
+import Skills from './components/Skills/Skills';
+import Contact from './components/Contact/Contact';
 
-const App: React.FC = () => {
-	const { ref: aboutRef, inView: aboutInView } = useInView({
-		triggerOnce: true,
-	});
-	const { ref: projectsRef, inView: projectsInView } = useInView({
-		triggerOnce: true,
-	});
+export default function App() {
+  useSmoothScroll();
 
-	const theme = createTheme({
-		typography: {
-			fontFamily: [
-				"-apple-system",
-				"BlinkMacSystemFont",
-				'"Segoe UI"',
-				"Roboto",
-				'"Helvetica Neue"',
-				"Arial",
-				"sans-serif",
-				'"Apple Color Emoji"',
-				'"Segoe UI Emoji"',
-				'"Segoe UI Symbol"',
-				'"Bebas Neue"',
-			].join(","),
-		},
-	});
-
-	return (
-		<ThemeProvider theme={theme}>
-			<div className="App">
-				<div className="gradient__bg">
-					<Navbar />
-					<Header />
-					<div ref={aboutRef}>
-						{aboutInView ? (
-							<div className="about">
-								<About />{" "}
-							</div>
-						) : (
-							<div className="tempAbout" id="about"></div>
-						)}
-					</div>
-					<div>
-						{projectsInView ? (
-							<div className="projects">
-								<Projects />
-							</div>
-						) : (
-							<div className="tempProjects" id="projects"></div>
-						)}
-					</div>
-					<div ref={projectsRef} />
-
-					<Footer />
-				</div>
-			</div>
-		</ThemeProvider>
-	);
-};
-
-export default App;
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Contact />
+      </main>
+    </>
+  );
+}

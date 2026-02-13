@@ -1,0 +1,172 @@
+/* ========================================
+   About Section
+   ======================================== */
+
+.about {
+  position: relative;
+  padding: var(--space-3xl) var(--space-lg);
+  overflow: hidden;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  align-items: center;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about__paragraph {
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.about__paragraph strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Education cards */
+.about__education {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.about__edu-card {
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.about__edu-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.about__edu-degree {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.about__edu-school {
+  font-size: var(--text-sm);
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.about__edu-meta {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: 6px;
+  font-size: var(--text-xs);
+  color: var(--text-tertiary);
+}
+
+/* Photo side */
+.about__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__photo-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border);
+}
+
+.about__photo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--text-tertiary);
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+}
+
+.about__photo-accent {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  border: 2px solid rgba(123, 97, 255, 0.25);
+  z-index: -1;
+}
+
+/* Achievements */
+.about__achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.about__achievement {
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.about__achievement:hover {
+  border-color: var(--accent-dim);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .about__visual {
+    order: -1;
+  }
+
+  .about__photo-wrapper {
+    max-width: 280px;
+  }
+}

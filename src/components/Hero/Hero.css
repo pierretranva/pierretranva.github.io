@@ -1,0 +1,130 @@
+/* ========================================
+   Hero Section
+   ======================================== */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl);
+  overflow: hidden;
+}
+
+.hero__name {
+  font-family: 'Gaegu', cursive;
+  font-size: var(--text-hero);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  overflow: visible;
+}
+
+.hero__name-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero__letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-xl);
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero__sub-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  will-change: transform;
+}
+
+.hero__subtitle--blue .hero__sub-letter {
+  color: var(--retro-blue);
+  font-weight: 500;
+}
+
+.hero__subtitle--purple .hero__sub-letter {
+  color: var(--retro-purple);
+  font-weight: 500;
+}
+
+.hero__line {
+  width: 1px;
+  height: 0;
+  background: var(--accent);
+  margin-top: var(--space-xl);
+  opacity: 0;
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  opacity: 0;
+}
+
+.hero__scroll-text {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-tertiary);
+  writing-mode: vertical-rl;
+}
+
+.hero__scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(0.6); }
+  50% { opacity: 0.8; transform: scaleY(1); }
+}
+
+/* Decorative ambient glow */
+.hero__glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(123, 97, 255, 0.08) 0%, rgba(0, 102, 204, 0.04) 40%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-lg) var(--space-md);
+  }
+}
